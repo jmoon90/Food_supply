@@ -19,7 +19,9 @@ feature 'food service employee' do
   end
 
   scenario 'views all food supplies provided' do
+    food = FactoryGirl.create(:track_food_supply)
     visit track_food_supplies_path
-    FactoryGirl.create(:track_food_supply)
+
+    expect(page).to have_content(food.title)
   end
 end
