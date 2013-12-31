@@ -1,0 +1,21 @@
+<h1> Submit Inventory for Record </h1>
+  <ul>
+    <% @tfs.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<ul>
+<%= form_for(@tfs) do |f| %>
+
+  <li><%= f.label :title %></li>
+  <li><%= f.text_field :title %></li>
+
+  <li><%= f.label :description %></li>
+  <li><%= f.text_field :description %></li>
+
+  <li><%= f.label :quantity %></li>
+  <li><%= f.text_field :quantity %></li>
+
+  <li><%= f.submit 'Submit' %></li>
+<% end %>
+</ul>
